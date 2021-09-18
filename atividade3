@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+			
+public class Program
+{
+  public static void Main()
+  {
+    List<string> armas = new List<string>();
+    string resp =" ";
+    string armanova = " ";
+    string mostrarma = " ";
+    int respoa;
+    armas.Insert(0, "Faca ");
+    armas.Insert(1, " Pistola Laser");
+    
+    while(resp != "S"){
+    Console.WriteLine("Armas disponiveis :");
+    foreach(string nome in armas){
+      Console.WriteLine(" Arma: "+nome+" numero: "+armas.IndexOf(nome));
+     }
+    Console.WriteLine("Deseja, incluir arma nova = A ");
+    Console.WriteLine("Deseja, cerrar programa = S ");
+    Console.WriteLine("Deseja, Usar arma? = D ");
+    resp = Console.ReadLine();
+    while(resp != "A" && resp != "S" && resp != "D"){
+      Console.WriteLine("Opçoes sao A(incluir), S(Sair) ou D(olhar)  ");
+      Console.WriteLine("Escreva sua resposta ");
+      resp = Console.ReadLine();
+    }
+      if(resp == "D")
+      {
+      Console.WriteLine("No da arma: ");
+      respoa = int.Parse(Console.ReadLine());
+        Console.WriteLine("Usando arma: "+armas[respoa]);
+       Console.WriteLine("Brigado por usar nosso sistema, ate logo! ");
+        mostrarma = "nao"; 
+       }
+    if(resp == "A")
+      {
+      do{ 
+      	Console.WriteLine("agregar nome da arma: ");
+      	armas.Add(Console.ReadLine());
+      	foreach(string nome in armas){
+     	  Console.WriteLine(" Arma: "+nome+" numero: "+armas.IndexOf(nome));
+        }
+         Console.WriteLine("Deseja agregar mais um arma: ");
+        armanova = Console.ReadLine();
+        //resp = "S";
+    		}while(armanova == "sim");
+      Console.WriteLine("Brigado por usar nosso sistema, ate logo! ");
+      }
+    
+    }
+    if(resp == "S"){
+      Console.WriteLine("Brigado por usar nosso sistema, ate logo! ");
+      Console.WriteLine(" Encerrando programa ");
+    }
+  }
+}
